@@ -1,0 +1,42 @@
+<app-header>
+</app-header>
+<div class="container">
+  <h2>My Tickets</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let ticket of tickets; let i = index">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ ticket.Name }}</h5>
+          <p class="card-text">
+            <strong>From:</strong> {{ ticket.From }}<br>
+            <strong>To:</strong> {{ ticket.To }}<br>
+            <strong>Date:</strong> {{ ticket.Date | date:'yyyy-MM-dd' }}<br>
+            <strong>Total Price:</strong> {{ ticket.TotalPrice }}
+          </p>
+          <button class="btn btn-danger btn-sm" (click)="showCancelConfirmation(ticket, i)">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayModal}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Cancellation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to cancel the ticket for {{ selectedTicket?.Name }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideModal()">Close</button>
+        <button type="button" class="btn btn-danger" (click)="confirmCancelTicket(selectedTicket, selectedIndex)">Confirm Cancellation</button>
+      </div>
+    </div>
+  </div>
+</div>

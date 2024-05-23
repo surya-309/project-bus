@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="booking-form-container">
+    <form [formGroup]="bookingForm" (ngSubmit)="onBooking()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label for="from">From</label>
+        <input type="text" id="from" formControlName="from" required>
+      </div>
+      <div class="form-group">
+        <label for="to">To</label>
+        <input type="text" id="to" formControlName="to" required>
+      </div> 
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" formControlName="date" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="noOfTickets">No. of Tickets</label>
+        <input type="number" id="noOfTickets" formControlName="noOfTickets" required>
+      </div>
+      <div class="form-group">
+        <label for="totalPrice">Total Price</label>
+        <input type="number" id="totalPrice" formControlName="totalPrice" required>
+      </div>
+      <button type="button" class="add-btn" (click)="addBooking()">+</button>
+      <button type="submit" class="submit-btn" (click)="onBooking()">Book</button>
+    </form>
+    <div class="booked-trips">
+      <h3>Booked Trips</h3>
+      <div class="trip-item" *ngFor="let booking of bookings; let i=index">
+        <p>Name: {{ booking.name }}</p>
+        <p>From: {{ booking.from }}</p>
+        <p>To: {{ booking.to }}</p>
+        <p>No. of Tickets: {{ booking.noOfTickets }}</p>
+        <p>Total Price: {{ booking.totalPrice }}</p>
+        <button type="button" class="remove-btn" (click)="removeBooking(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+  

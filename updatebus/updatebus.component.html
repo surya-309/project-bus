@@ -1,0 +1,61 @@
+<app-adminheader></app-adminheader>
+<div class="container">
+  <h2>Update Bus</h2>
+  <div class="bus-card" *ngFor="let b of bus">
+    <div class="bus-details">
+      <h3>Bus Number: {{ b.BusNumber }}</h3>
+      <p>Id: {{b.Id}}</p>
+      <p>Driver ID: {{ b.DriverId }}</p>
+      <p>From: {{ b.From }}</p>
+      <p>No. of Seats: {{ b.NoSeats }}</p>
+      <p>To: {{ b.To }}</p>
+      <p>Type: {{ b.Type }}</p>
+      <p>Price: {{ b.price }}</p>
+      <p>Time: {{ b.time }}</p>
+    </div>
+    <button class="edit-btn" (click)="editBus(b)">Edit</button>
+  </div>
+
+  <div class="edit-form" *ngIf="selectedBus">
+    <h3>Edit Bus</h3>
+    <form [formGroup]="EditForm" >
+      <div class="form-group">
+        <label for="busId">Bus Id:</label>
+        <input type="text" id="busId" formControlName="Id" name="busId" />
+      </div>
+      <div class="form-group">
+        <label for="busNumber">Bus Number:</label>
+        <input type="text" id="busNumber" formControlName="busNumber" name="busNumber" />
+      </div>
+      <div class="form-group">
+        <label for="driverId">Driver ID:</label>
+        <input type="text" id="driverId" formControlName="driverId" name="driverId" />
+      </div>
+      <div class="form-group">
+        <label for="from">From:</label>
+        <input type="text" id="from" formControlName="from" name="from" />
+      </div>
+      <div class="form-group">
+        <label for="noSeats">No. of Seats:</label>
+        <input type="number" id="noSeats" formControlName="noSeats" name="noSeats" />
+      </div>
+      <div class="form-group">
+        <label for="to">To:</label>
+        <input type="text" id="to" formControlName="to" name="to" />
+      </div>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <input type="text" id="type" formControlName="type" name="type" />
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" name="price" />
+      </div>
+      <div class="form-group">
+        <label for="time">Time:</label>
+        <input type="text" id="time" formControlName="time" name="time" />
+      </div>
+      <button type="submit" class="save-btn" (click)="updateBus()">Save</button>
+    </form>
+  </div>
+</div>

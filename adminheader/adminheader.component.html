@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a routerLink="/Home" routerLinkActive="active">
+          <img src="https://e7.pngegg.com/pngimages/584/779/png-clipart-public-transport-bus-service-travel-transit-bus-bus-logo-angle-hat.png" alt="Company Logo">
+        </a>
+        <small class="cname"><b>Bus Travels</b></small>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a routerLink="/addbus" routerLinkActive="active">ADD BUS</a></li>
+          <li><a routerLink="/userdetails" routerLinkActive="active">USER DETAILS</a></li>
+          <li><a routerLink="/alltickets" routerLinkActive="active">All Details</a></li>
+          <li><a routerLink="/updatebus" routerLinkActive="active">Update Bus</a></li>
+          <li> <button class="btn btn-danger" (click)="logout()">Logout</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+ 

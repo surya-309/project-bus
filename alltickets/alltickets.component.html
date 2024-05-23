@@ -1,0 +1,23 @@
+<app-adminheader></app-adminheader>
+<div class="container">
+  <h2>All Tickets</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let ticket of tickets; let i = index">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ ticket.Name }}</h5>
+          <p class="card-text">
+            <strong>From:</strong> {{ ticket.From }}<br>
+            <strong>To:</strong> {{ ticket.To }}<br>
+            <strong>Date:</strong> {{ ticket.Date | date:'yyyy-MM-dd' }}<br>
+            <strong>Bus ID:</strong> {{ ticket.time}}<br>
+            <strong>Total Price:</strong> {{ ticket.TotalPrice }}
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

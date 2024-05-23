@@ -1,0 +1,61 @@
+.header {
+    background-color: #0072C6; /* Blue color */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    margin-left: 1.5rem;
+  }
+  
+  .nav a {
+    color: #FFFFFF; /* White color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #E6E6E6; /* Light gray color */
+  }
+  
+  .nav a.active {
+    color: #FFD700; /* Gold color */
+  }
+  
+  .logout {
+    color: #FFFFFF; /* White color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .logout:hover {
+    color: #E6E6E6; /* Light gray color */
+  }
+  .cname{
+    
+    text-shadow:chocolate;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 20px;
+    text-decoration: underline;
+  }

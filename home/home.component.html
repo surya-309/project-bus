@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="home-container">
+    <div class="category-grid" >
+        <div *ngFor="let bus of busDetails; let i = index">
+            <a ><div class= "image1" ><img   [src]="busImages[i]">
+                <p><b>{{bus.From}} to {{bus.To}}</b></p></div></a>
+                <div class="overlay" >
+                <div class="card">
+                    <h3>{{bus.BusNumber}}</h3>
+                    <p> From : {{bus.From}}</p>
+                    <p> To : {{bus.To}}</p>
+                    <p> Type : {{bus.Type}}</p>
+                    <p>Price: {{bus.price}}</p>
+                    <p>Time : {{bus.time}}</p>
+                    <p>No of Seats: {{bus.NoSeats}}</p>
+                    <p>Available Seats: {{bus.AvailableSeats}}</p>
+                    <a routerLink="/booking"><button class="btn btn-primary" (click)="onclick(bus)">Book</button></a>
+                </div>
+        </div>
+       
+
+</div>
