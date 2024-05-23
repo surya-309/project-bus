@@ -1,0 +1,6 @@
+@Busticket_HostAddress = http://localhost:5077
+
+GET {{Busticket_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
